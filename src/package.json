@@ -1,0 +1,14 @@
+{
+  "name": "task-2",
+  "version": "1.0.0",
+  "description": "An exported example from Semantic UI React, https://react.semantic-ui.com/",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-multi-date-picker": "3.3.4",
+    "react-scripts": "latest",
+    "semantic-ui-react": "2.1.4"
+  },
+  "keywords": []
+}
