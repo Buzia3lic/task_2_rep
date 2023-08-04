@@ -35,29 +35,9 @@ const UserPage = () => (
         <Grid.Column Align="center">
             <Calendar />
         </Grid.Column>
-        
-        
+
+
     </Grid>
-
-    
 )
 
-
-const Segments = () => (
-
-<Segment.Group horizontal>
-        <Segment textAlign="center" inverted color="green">
-            6
-        </Segment>
-
-        <Segment textAlign="center" inverted color="red">
-            2
-        </Segment>
-    </Segment.Group>
-)
-
-
-export { 
-    Segments,
-    UserPage
-}
+export default UserPage
