@@ -1,7 +1,9 @@
 import "./style.css";
 import React, { useState } from "react";
-import Example from "./calendar";
-import Logout from "./logout";
+import Calendar from "./calendar";
+import VacationTable from "./vacationTable";
+import UserPage from "./userPage";
+
 import {
   Menu,
   Label,
@@ -24,7 +26,6 @@ const panes = [
           <Grid.Column Align="center">
             <Card>
               <Image
-                // src="https://thumbs.dreamstime.com/b/%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82-%D1%87%D0%B5-%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80-%D1%81%D0%B8-%D1%83%D1%8D%D1%82%D0%B0-71464248.jpg"
                 src="https://www.webmoney.ru/img/wmkeeper_256x256.png"
                 wrapped
                 ui={false}
@@ -41,7 +42,7 @@ const panes = [
             </Card>
           </Grid.Column>
           <Grid.Column Align="center">
-            <Example />
+            <Calendar/>
           </Grid.Column>
         </Grid>
 
@@ -54,22 +55,20 @@ const panes = [
             2
           </Segment>
         </Segment.Group>
+
+        <UserPage/>
       </Tab.Pane>
     )
   },
 
   {
     menuItem: { key: "history", icon: "history", content: "История" },
-    render: () => <Tab.Pane>Tab 2 Content</Tab.Pane>
+    render: () => 
+    <Tab.Pane>
+      <VacationTable/>
+    </Tab.Pane>
   },
 
-  // {
-  //   menuItem: (
-  //     <Menu.Item  key="logout" className="to-right" icon="sign-out alternate">
-
-  //     </Menu.Item>
-  //   )
-  // },
 
   {
     menuItem: {
@@ -105,16 +104,3 @@ const vacationData = () => {
 };
 
 export default vacationData;
-
-// export default function Example() {
-//   const [value, setValue] = useState(new Date());
-
-//   return (
-//     <Calendar
-//       multiple
-//       plugins={[<DatePanel />]}
-//       value={value}
-//       onChange={setValue}
-//     />
-//   );
-// }

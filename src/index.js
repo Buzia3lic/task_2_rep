@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Container, Header, List } from "semantic-ui-react";
 
 import pkg from "semantic-ui-react/package.json";
-import Example from "./example";
+import MainTabs from "./mainTabs";
 
 const App = ({ children }) => (
   <Container style={{ margin: 20 }}>{children}</Container>
@@ -18,7 +18,7 @@ document.head.appendChild(styleLink);
 
 ReactDOM.render(
   <App>
-    <Example />
+    <MainTabs />
   </App>,
   document.getElementById("root")
 );
