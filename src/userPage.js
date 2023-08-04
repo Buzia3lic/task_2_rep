@@ -38,21 +38,26 @@ const UserPage = () => (
         
         
     </Grid>
+
+    
 )
 
 
-// const Segments = () => {
-// return(
-// <Segment.Group horizontal>
-//         <Segment textAlign="center" inverted color="green">
-//             6
-//         </Segment>
+const Segments = () => (
 
-//         <Segment textAlign="center" inverted color="red">
-//             2
-//         </Segment>
-//     </Segment.Group>
-// )
-// }
+<Segment.Group horizontal>
+        <Segment textAlign="center" inverted color="green">
+            6
+        </Segment>
 
-export default UserPage
+        <Segment textAlign="center" inverted color="red">
+            2
+        </Segment>
+    </Segment.Group>
+)
+
+
+export { 
+    Segments,
+    UserPage
+}

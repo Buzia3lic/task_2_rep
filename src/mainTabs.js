@@ -2,7 +2,7 @@ import "./style.css";
 import React, { useState } from "react";
 import Calendar from "./calendar";
 import VacationTable from "./vacationTable";
-import UserPage from "./userPage";
+import {UserPage, Segments} from "./userPage";
 
 import {
   Menu,
@@ -22,7 +22,7 @@ const panes = [
     menuItem: { key: "users", icon: "user", content: "Сотрудник" },
     render: () => (
       <Tab.Pane>
-        <Grid columns={2}>
+        {/* <Grid columns={2}>
           <Grid.Column Align="center">
             <Card>
               <Image
@@ -54,9 +54,10 @@ const panes = [
           <Segment textAlign="center" inverted color="red">
             2
           </Segment>
-        </Segment.Group>
+        </Segment.Group> */}
 
         <UserPage/>
+        <Segments/>
       </Tab.Pane>
     )
   },
