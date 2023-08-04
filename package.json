@@ -7,12 +7,11 @@
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-multi-date-picker": "3.3.4",
-    "react-scripts": "latest",
     "semantic-ui-react": "^2.1.4"
   },
   "keywords": [],
   "devDependencies": {
-    "react-scripts": "1.0.0"
+    "react-scripts": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
