@@ -8,12 +8,15 @@ import {
     Image,
     Grid,
     Segment,
+    Button,
+    Container,
+    Progress
 } from "semantic-ui-react";
 
 
 const UserPage = () => (
 
-    <Grid columns={2}>
+    <Grid container celled='internally' columns={2}>
         <Grid.Column Align="center">
             <Card>
                 <Image
@@ -21,7 +24,7 @@ const UserPage = () => (
                     wrapped
                     ui={false}
                 />
-                <Card.Content>
+                <Card.Content >
                     <Card.Header textAlign="center">Майк Вазовски</Card.Header>
                     <Card.Meta textAlign="center">
                         <span className="date">Работает с 2015</span>
@@ -33,10 +36,25 @@ const UserPage = () => (
             </Card>
         </Grid.Column>
         <Grid.Column Align="center">
-            <Calendar />
+            <Grid.Row><Calendar /><br /></Grid.Row>
+
+            <Grid.Row>
+
+                
+                    <Button fluid animated color='blue'>
+                        <Button.Content visible>Запросить</Button.Content>
+                        <Button.Content hidden>
+                            <Icon name='arrow right' />
+                        </Button.Content>
+                    </Button>
+                
+            </Grid.Row>
+
+
+
         </Grid.Column>
 
-
+       
     </Grid>
 )
 

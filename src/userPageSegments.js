@@ -2,21 +2,14 @@ import "./style.css";
 import React, { useState } from "react";
 
 import {
-    Segment
+    Segment, Progress, Label, Grid
 } from "semantic-ui-react";
 
 
 const UserPageSegments = () => (
 
-<Segment.Group horizontal>
-        <Segment textAlign="center" inverted color="green">
-            6
-        </Segment>
+<Progress value='6' total='8' progress='ratio' color='green' size='large' label='Отпускных смен осталось'/>
 
-        <Segment textAlign="center" inverted color="red">
-            2
-        </Segment>
-    </Segment.Group>
 )
 
 

@@ -6,24 +6,16 @@ import UserPage from "./userPage";
 import UserPageSegments from "./userPageSegments";
 
 import {
-  Menu,
-  Label,
   Tab,
-  Button,
-  Icon,
-  Card,
-  Image,
-  Grid,
-  Segment,
-  Container
+  Divider
 } from "semantic-ui-react";
 
 const panes = [
   {
     menuItem: { key: "users", icon: "user", content: "Сотрудник" },
     render: () => (
-      <Tab.Pane>
-        <UserPage/>
+      <Tab.Pane secondary>
+        <UserPage/><br/>
         <UserPageSegments/>
       </Tab.Pane>
     )
@@ -32,7 +24,9 @@ const panes = [
   {
     menuItem: { key: "history", icon: "history", content: "История" },
     render: () => 
-    <Tab.Pane>
+    <Tab.Pane secondary>
+       <UserPageSegments/>
+       <Divider />
       <VacationTable/>
     </Tab.Pane>
   },
