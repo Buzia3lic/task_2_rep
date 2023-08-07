@@ -1,4 +1,3 @@
-import "./style.css";
 import React, { useState } from "react";
 import Calendar from "./calendar";
 import VacationTable from "./vacationTable";
