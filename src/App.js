@@ -4,12 +4,16 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import { Container, Header, List } from "semantic-ui-react";
 
-const App = () => (
+function App() {
+  return (
     <Container style={{ margin: 20 }}>
-      
+
       <MainTabs />
-      
-      </Container>
-)
+
+    </Container>
+  );
+
+
+}
 
 export default App;
