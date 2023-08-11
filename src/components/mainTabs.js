@@ -1,32 +1,36 @@
 import React, { useState } from "react";
 import VacationTable from "./vacationTable";
-import UserPageProgress from "./userPageProgress";
-import UserPage from "./userPage";
-
-
+import UserPage from "../pages/userPage";
+import HistoryPage from "../pages/historyPage";
+import { Routes, Route, Link } from "react-router-dom";
 import {
   Tab,
   Divider
 } from "semantic-ui-react";
 
+
 const panes = [
   {
     menuItem: { key: "users", icon: "user", content: "Сотрудник" },
     render: () => (
+      // <Tab.Pane secondary>
+      //   <UserPage/>
+      // </Tab.Pane>
       <Tab.Pane secondary>
-        <UserPage/><br/>
-        <UserPageProgress/>
+        <Link to="../pages/userPage"><UserPage/></Link>
       </Tab.Pane>
     )
   },
 
   {
     menuItem: { key: "history", icon: "history", content: "История" },
-    render: () => 
-    <Tab.Pane secondary>
-       <UserPageProgress/>
-       <Divider />
-      <VacationTable/>
+    render: () =>
+      // <Tab.Pane secondary>
+      //   <HistoryPage />
+      // </Tab.Pane>
+      
+      <Tab.Pane secondary>
+      <Link to="../pages/historyPage"><HistoryPage /></Link>
     </Tab.Pane>
   },
 
@@ -45,13 +49,20 @@ const mainTabs = () => {
   // const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <Tab
-      menu={{
-        icon: "labeled",
-        color: "blue",
-        inverted: true
-      }}
-      panes={panes}
+    <>
+      <Routes>
+        <Route path="../pages/userPage" element={<UserPage />} />
+        <Route path="../pages/historyPage" element={<HistoryPage />} />
+
+      </Routes>
+
+      <Tab
+        menu={{
+          icon: "labeled",
+          color: "blue",
+          inverted: true
+        }}
+        panes={panes}
       // activeIndex={activeIndex}
       // onTabChange={(e, data) => {
       //   if (data.activeIndex === 2) {
@@ -60,7 +71,8 @@ const mainTabs = () => {
       //   }
       //   setActiveIndex(data.activeIndex);
       // }}
-    />
+      />
+    </>
   );
 };
 

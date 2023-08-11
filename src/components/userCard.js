@@ -13,10 +13,8 @@ import {
 } from "semantic-ui-react";
 
 
-const UserPage = () => (
+const UserCard = () => (
 
-    <Grid container celled='internally' columns={2}>
-        <Grid.Column Align="center">
             <Card>
                 <Image
                     src="https://www.webmoney.ru/img/wmkeeper_256x256.png"
@@ -33,28 +31,6 @@ const UserPage = () => (
                     </Card.Description>
                 </Card.Content>
             </Card>
-        </Grid.Column>
-        <Grid.Column Align="center">
-            <Grid.Row><Calendar /><br /></Grid.Row>
-
-            <Grid.Row>
-
-                
-                    <Button fluid animated color='blue'>
-                        <Button.Content visible>Запросить</Button.Content>
-                        <Button.Content hidden>
-                            <Icon name='arrow right' />
-                        </Button.Content>
-                    </Button>
-                
-            </Grid.Row>
-
-
-
-        </Grid.Column>
-
-       
-    </Grid>
 )
 
-export default UserPage
+export default UserCard
