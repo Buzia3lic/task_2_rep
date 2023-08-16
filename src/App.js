@@ -7,9 +7,8 @@ import { Container, Header, List } from "semantic-ui-react";
 function App() {
   return (
     <Container style={{ margin: 20 }}>
-
-      <MainTabs />
-
+      
+        <MainTabs />
     </Container>
   );
 

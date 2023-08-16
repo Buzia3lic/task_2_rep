@@ -16,7 +16,7 @@ import UserCard from "../components/userCard";
 
 
 const UserPage = () => (
-
+<Segment secondary>
     <Grid container celled='internally' >
 
         <Grid.Row columns={2}>
@@ -42,8 +42,8 @@ const UserPage = () => (
             </Grid.Column>
         </Grid.Row>
 
-
     </Grid>
+    </Segment>
 )
 
 export default UserPage
