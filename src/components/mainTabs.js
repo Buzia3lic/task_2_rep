@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import UserPage from "../pages/userPage";
 import HistoryPage from "../pages/historyPage";
 import StartPage from "../pages/startPage";
-import { Routes, Route, Link, Router} from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import {
-  Tab,
-  Divider
+  Tab
 } from "semantic-ui-react";
-import Layout from "./layout";
+import MainMenu from "./mainMenu";
 
-const panes = [
-  {
-   menuItem: { as: Link, to: "/userPage", key: "users", icon: "user", content: "Сотрудник" }
- },
+// const panes = [
+//   {
+//     menuItem: { as: Link, to: "/userPage", key: "users", icon: "user", content: "Сотрудник" }
+//   },
 
-{
- menuItem: { as: Link, to: "/historyPage", key: "history", icon: "history", content: "История" }
-},
+//   {
+//     menuItem: { as: Link, to: "/historyPage", key: "history", icon: "history", content: "История" }
+//   },
 
-{
- menuItem: {
-   key: "logout",
-     icon: "sign-out alternate",
-       content: "Выход",
-         position: "right"
- }
-}
-];
+//   {
+//     menuItem: {
+//       key: "logout",
+//       icon: "sign-out alternate",
+//       content: "Выход",
+//       position: "right"
+//     }
+//   }
+// ];
 
 const mainTabs = () => {
 
   return (
     <>
-      <Tab
+      {/* <Tab
         menu={{
           icon: "labeled",
           color: "blue",
@@ -40,80 +39,20 @@ const mainTabs = () => {
         }}
         panes={panes}
 
-      />
+      /> */}
       <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="/userPage" element={<UserPage />} />
-        <Route path="/historyPage" element={<HistoryPage />} />
+        <Route path="/" element={<MainMenu />}>
+          <Route index element={<StartPage />} />
+          <Route path="userPage" element={<UserPage />} />
+          <Route path="historyPage" element={<HistoryPage />} />
+        </Route>
       </Routes>
+
     </>
   );
 };
 
 export default mainTabs;
-
-// const panes = [
-//   {
-//     menuItem: { as: Link, to: "../pages/userPage", key: "users", icon: "user", content: "Сотрудник" },
-
-
-//             render: () => (
-   
-//       <Tab.Pane secondary >
-// {/* <UserPage /> */}
-// <Routes>
-//         <Route path="../pages/userPage" element={<UserPage />} />
-//         <Route path="../pages/historyPage" element={<HistoryPage />} />
-
-
-//       </Routes>
-//       </Tab.Pane >
-//     )
-
-//   },
-
-// {
-//   menuItem: { as: Link, to: "../pages/historyPage", key: "history", icon: "history", content: "История" },
-//   render: () =>
-
-//     <Tab.Pane secondary>
-//       <HistoryPage />
-//     </Tab.Pane>
-// },
-
-
-// {
-//   menuItem: {
-//     key: "logout",
-//       icon: "sign-out alternate",
-//         content: "Выход",
-//           position: "right"
-//   }
-// }
-// ];
-
-// const mainTabs = () => {
-
-//   return (
-//     <>
-//       <Tab
-//         menu={{
-//           icon: "labeled",
-//           color: "blue",
-//           inverted: true
-//         }}
-//         panes={panes}
-
-//       />
-//       <Routes>
-//         <Route path="../pages/userPage" element={<UserPage />} />
-//         <Route path="../pages/historyPage" element={<HistoryPage />} />
-//       </Routes>
-//      </>
-//   );
-// };
-
-// export default mainTabs;
 
 
 
