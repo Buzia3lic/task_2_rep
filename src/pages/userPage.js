@@ -4,13 +4,10 @@ import UserPageProgress from "../components/userPageProgress";
 
 import {
     Icon,
-    Card,
-    Image,
     Grid,
     Segment,
     Button,
-    Container,
-    Progress
+
 } from "semantic-ui-react";
 import UserCard from "../components/userCard";
 
@@ -20,10 +17,10 @@ const UserPage = () => (
     <Grid container celled='internally' >
 
         <Grid.Row columns={2}>
-            <Grid.Column Align="center">
+            <Grid.Column align="center">
                 <UserCard />
             </Grid.Column>
-            <Grid.Column Align="center">
+            <Grid.Column align="center">
                 <Grid.Row>
                     <Calendar /><br />
                 </Grid.Row>
