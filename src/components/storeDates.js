@@ -20,7 +20,7 @@ import { persist } from 'zustand/middleware';
 // }))
 
 
-export const fetchDate = create((set) => ({
+export const storeDate = create((set) => ({
     history: [],
     loading: false,
     error: null,
@@ -29,18 +29,29 @@ export const fetchDate = create((set) => ({
         set({ loading: true })
 
         try {
-            const res = await fetch('http://localhost:3000/db')
+            
+            const res = await fetch('http://localhost:3001/db')
+            if (!res.ok) {
 
-            if (!res.ok) throw new Error('Даты не получены!')
+                throw new Error('Даты не получены!')
+                
+            }
 
             set({ history: await res.json(), error: null })
+            // if (res.status >=200 && res.status < 300){
+            //     set({ history: await res.json(), error: null })
+            // }
+            // else{
+            //     throw new Error('Даты не получены!')
+            // }
 
         }
         catch (error) {
-            set({error: error.message})
-            console.log(error.message);
+            set({ error: error.message })
+            
         }
         finally {
             set({ loading: false })
         }
-    }}))
+    }
+}))
