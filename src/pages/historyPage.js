@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Segment, Divider, Loader } from 'semantic-ui-react'
 import UserPageProgress from '../components/userPageProgress'
 import VacationTable from '../components/vacationTable'
-import List from '../components/List'
-import withListLoading from '../components/withListLoading'
 import FetchDates from '../components/fetchDates';
 
 const HistoryPage = () => (

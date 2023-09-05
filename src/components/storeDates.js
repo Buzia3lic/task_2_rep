@@ -38,12 +38,7 @@ export const storeDate = create((set) => ({
             }
 
             set({ history: await res.json(), error: null })
-            // if (res.status >=200 && res.status < 300){
-            //     set({ history: await res.json(), error: null })
-            // }
-            // else{
-            //     throw new Error('Даты не получены!')
-            // }
+
 
         }
         catch (error) {
