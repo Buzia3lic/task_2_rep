@@ -1,6 +1,7 @@
 var a = {
   fio: "Yurkov",
   history: [
+    { data: "2024-01-01" },
     { data: "2019-01-01" },
     { data: "04 01 2023" },
     { data: "07/01/2023" },
@@ -11,56 +12,44 @@ var a = {
   ]
 };
 
+console.info(a)
+
 const arr = [];
 a.history.map((history) => {
   arr.push(new Date(history.data));
 });
 
-console.log(arr);
+console.error(arr);
 
-arr.sort(function (a, b) {
-  return a - b;
-});
-console.info(arr);
+//arr.sort(function (a, b) {
+//  return a - b;
+//});
+//console.info(arr);
 
-const arr2 = [];
-var j = 0;
-var k = 0;
-arr2[j] = [];
-arr2[0][0] = arr[0];
 
-for (var i = 1; i < arr.length; i++) {
-  if (arr2[j][k] === arr[i]) {
-    continue;
-  } else {
-    if (arr2[j][k].getFullYear() === arr[i].getFullYear()) {
-      arr2[j].push(arr[i]);
-      k++;
-    } else {
-      j++;
-      arr2[j] = [];
-      arr2[j].push(arr[i]);
-      k = 0;
-    }
-  }
-}
 
-console.error(arr2);
+//const groupBy = (ar, key) => {
+
+//  return ar.reduce(function (rv, x) {
+//   (rv[x.key] = rv[x.key] || []).push(x);
+//    return rv;
+//  }, {});
+//};
 
 const groupBy = (ar, key) => {
-  
-  return ar.reduce(function (rv, x) {
-    (rv[x.key] = rv[x.key] || []).push(x);
-    return rv;
-  }, {});
+  return ar[key].reduce(function (rv, x) {
+    (rv).push(new Date(x.data))
+    //(rv[x[key]] = rv[x[key]] || []).push(x)
+    return rv
+  }, []);
 };
 
-//const c = a.history.map((history) => new Date(history.data))
-//console.log(c)
+const arr3 = arr.reduce(function (rv, item) {
+  (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item);
+    return rv
+  }, {});
 
-//const b = a.history.filter(user => user.data.includes('2019'));
-
-//console.log(b);
+console.log(arr3);
 
 
-//console.log(groupBy(c, );
+
