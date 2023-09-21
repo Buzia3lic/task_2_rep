@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon, Table } from 'semantic-ui-react'
 
 const VacationTable = () => (
-  <Table celled>
+  <Table singleLine color='green'>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell textAlign='center'>Год</Table.HeaderCell>
