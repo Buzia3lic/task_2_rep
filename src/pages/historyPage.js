@@ -6,7 +6,7 @@ import FetchDates from '../components/fetchDates';
 
 const HistoryPage = () => (
     <Segment secondary>
-        <FetchDates />
+        {/* <FetchDates /> */}
         <UserPageProgress />
         <Divider />
         <VacationTable />
