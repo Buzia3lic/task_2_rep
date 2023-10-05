@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Segment, Divider, Loader } from 'semantic-ui-react'
 import UserPageProgress from '../components/userPageProgress'
 import VacationTable from '../components/vacationTable'
-import FetchDates from '../components/fetchDates';
+import { storeDate } from "../components/storeDates"
 
 const HistoryPage = () => (
+
+
     <Segment secondary>
-        {/* <FetchDates /> */}
         <UserPageProgress />
         <Divider />
         <VacationTable />

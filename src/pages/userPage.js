@@ -24,12 +24,12 @@ const UserPage = () => (
                 <Grid.Row>
                     <Calendar /><br />
                 </Grid.Row>
-                <Button fluid animated color='blue'>
+                {/* <Button fluid animated color='blue'>
                     <Button.Content visible>Запросить</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow right' />
                     </Button.Content>
-                </Button>
+                </Button> */}
             </Grid.Column>
         </Grid.Row>
 

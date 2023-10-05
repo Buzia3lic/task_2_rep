@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { storeDate } from "./storeDates"
 
 import {
-    Segment, Progress, Label, Grid
+    Segment, Progress, Label, Grid, Loader
 } from "semantic-ui-react";
 
 
@@ -51,6 +51,7 @@ const UserPageProgress = () => {
             var colorProc = 'green';
             break;     
       }
+    
     return <Progress value={8 - progressValue} total='8' progress='ratio' color={colorProc} size='large' label='Отпускных смен осталось' />
 
 
