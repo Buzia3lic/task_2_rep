@@ -52,10 +52,11 @@ const UserPageProgress = () => {
             break;
     }
 
+
     if (loading) return (
-            <Progress disabled size='large'>
-                <Loader active inline='centered' />
-            </Progress>
+        <Progress disabled size='large'>
+            <Loader active inline='centered' />
+        </Progress>
     )
     else return (<Progress value={8 - progressValue} total='8' progress='ratio' color={colorProc} size='large' label={'Отпускных смен в ' + new Date().getFullYear() + ' году осталось'} />)
 
