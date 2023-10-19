@@ -52,7 +52,7 @@ const UserPageProgress = () => {
             break;     
       }
     
-    return <Progress value={8 - progressValue} total='8' progress='ratio' color={colorProc} size='large' label='Отпускных смен осталось' />
+    return <Progress value={8 - progressValue} total='8' progress='ratio' color={colorProc} size='large' label={'Отпускных смен в ' +  new Date().getFullYear() + ' году осталось'} />
 
 
 }

@@ -18,12 +18,23 @@ const VacationTable = () => {
     arr.push(new Date(history.date));
   });
 
+  //console.error(arr);
+
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+
+  //console.info(arr);
+
+
+
   const arr3 = arr.reduce(function (rv, item) {
     (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
     return rv
   }, {});
 
   //console.log(arr3);
+  
   if (loading) return (
     <Segment color='red'>
       <Loader size='massive' active inline='centered' />
