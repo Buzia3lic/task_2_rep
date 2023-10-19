@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { storeDate } from "./storeDates"
-import { Icon, Table, Loader, Segment } from 'semantic-ui-react'
+import { Icon, Table, Loader, Segment, Dimmer } from 'semantic-ui-react'
 
 const VacationTable = () => {
 
@@ -34,11 +34,16 @@ const VacationTable = () => {
   }, {});
 
   //console.log(arr3);
-  
+
   if (loading) return (
-    <Segment color='red'>
+    // <Segment tertiary>
+    //   <Loader size='massive' active inline='centered' />
+    // </Segment>)
+
+    <Dimmer active inverted>
       <Loader size='massive' active inline='centered' />
-    </Segment>)
+    </Dimmer>)
+
   else return <Table singleLine color='green'>
     <Table.Header>
       <Table.Row>

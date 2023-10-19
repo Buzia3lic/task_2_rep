@@ -22,7 +22,9 @@ const UserPage = () => (
             </Grid.Column>
             <Grid.Column align="center">
                 <Grid.Row>
+                    <Segment inverted color="yellow" tertiary>
                     <Calendar /><br />
+                    </Segment>
                 </Grid.Row>
                 {/* <Button fluid animated color='blue'>
                     <Button.Content visible>Запросить</Button.Content>
