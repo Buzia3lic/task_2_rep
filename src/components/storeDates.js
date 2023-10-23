@@ -39,7 +39,7 @@ export const storeDate = create((set) => ({
             }
             const historyTemp = await res.json()
             //set({ history: historyTemp, error: null })
-            console.table(historyTemp);
+            
             const arrTemp = [];
             historyTemp.history?.map((history) => {
                 arrTemp.push(new Date(history.date));

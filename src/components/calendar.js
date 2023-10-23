@@ -1,24 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { Calendar } from "react-multi-date-picker";
+import { storeDate } from "./storeDates"
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import {
   Icon,
   Grid,
   Segment,
   Button,
+  Dimmer,
+  Loader
 
 } from "semantic-ui-react";
 
 
-export default function Example() {
+export default function CalendarButtons() {
   const [value, setValue] = useState();
 
+  useEffect(() => { fetchDates() }, [])
+
+  const { loading, error, history, fetchDates, arrFin } = storeDate((state) => ({
+    loading: state.loading,
+    error: state.error,
+    history: state.history,
+    fetchDates: state.fetchDates,
+    arrFin: state.arrFin
+  }));
+
+  for (var key in arrFin) {
+    var progressValue = new Date().getFullYear() == key ? arrFin[key].length : 0
+  };
+  var buttonDisable = progressValue < 8 ? false : true;
 
   function handleClick() {
 
     const postDate = []
-    
-    value?.map((el) => { postDate.push({date: el.toString()}) })
+
+    value?.map((el) => { postDate.push({ date: el.toString() }) })
 
     const requestOptions = {
       method: 'POST',
@@ -47,10 +64,11 @@ export default function Example() {
 
 
   }
-
-  return (
-
-    <Grid >
+  if (loading)
+    return <Dimmer active inverted>
+      <Loader size='massive' active inline='centered' />
+    </Dimmer>
+  else return <Grid >
       <Grid.Row >
         <Grid.Column >
           <Calendar
@@ -68,7 +86,7 @@ export default function Example() {
           <Button.Group fluid>
             {/* <Button animated color='blue' onClick={() => { value?.map((el) => { console.log(el.toString()) })}}> */}
 
-            <Button animated color='blue' onClick={handleClick}>
+            <Button disabled={buttonDisable} animated color='blue' onClick={handleClick}>
 
               <Button.Content visible>Запросить</Button.Content>
               <Button.Content hidden>
@@ -91,7 +109,7 @@ export default function Example() {
       </Grid.Row>
     </Grid>
 
-  );
+  
 
 
 
