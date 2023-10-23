@@ -6,32 +6,33 @@ const VacationTable = () => {
 
   useEffect(() => { fetchDates() }, [])
 
-  const { loading, error, history, fetchDates } = storeDate((state) => ({
+  const { loading, error, history, fetchDates, arrFin} = storeDate((state) => ({
     loading: state.loading,
     error: state.error,
     history: state.history,
-    fetchDates: state.fetchDates
+    fetchDates: state.fetchDates,
+    arrFin: state.arrFin
   }));
 
-  const arr = [];
-  history.history?.map((history) => {
-    arr.push(new Date(history.date));
-  });
+  // const arr = [];
+  // history.history?.map((history) => {
+  //   arr.push(new Date(history.date));
+  // });
 
-  //console.error(arr);
+  // //console.error(arr);
 
-  arr.sort(function (a, b) {
-    return a - b;
-  });
+  // arr.sort(function (a, b) {
+  //   return a - b;
+  // });
 
-  //console.info(arr);
+  // //console.info(arr);
 
 
 
-  const arr3 = arr.reduce(function (rv, item) {
-    (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
-    return rv
-  }, {});
+  // const arr3 = arr.reduce(function (rv, item) {
+  //   (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
+  //   return rv
+  // }, {});
 
   //console.log(arr3);
 
@@ -56,18 +57,18 @@ const VacationTable = () => {
     <Table.Body>
 
       {
-        Object.keys(arr3).reverse().map((key) => {
-          var status = arr3[key].length < 8 ? true : false
+        Object.keys(arrFin).reverse().map((key) => {
+          var status = arrFin[key].length < 8 ? true : false
 
 
           return (
 
             <Table.Row negative={status} positive={!status} textAlign='center'>
               <Table.Cell >{key}</Table.Cell>
-              <Table.Cell>{arr3[key].length}</Table.Cell>
+              <Table.Cell>{arrFin[key].length}</Table.Cell>
               <Table.Cell>
 
-                {arr3[key].map((x) => (<p>{x}</p>))}
+                {arrFin[key].map((x) => (<p>{x}</p>))}
 
               </Table.Cell>
             </Table.Row>

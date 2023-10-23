@@ -22,6 +22,7 @@ import { persist } from 'zustand/middleware';
 
 export const storeDate = create((set) => ({
     history: [],
+    arrFin: [],
     loading: false,
     error: null,
     fetchDates: async () => {
@@ -29,24 +30,46 @@ export const storeDate = create((set) => ({
         set({ loading: true })
 
         try {
-            
+
             const res = await fetch('http://localhost:3001/db')
             if (!res.ok) {
 
                 throw new Error('Даты не получены!')
-                
-            }
 
-            set({ history: await res.json(), error: null })
+            }
+            const historyTemp = await res.json()
+            //set({ history: historyTemp, error: null })
+            console.table(historyTemp);
+            const arrTemp = [];
+            historyTemp.history?.map((history) => {
+                arrTemp.push(new Date(history.date));
+            });
+
+            arrTemp.sort(function (a, b) {
+                return a - b;
+              });
+
+            const arrFin = arrTemp.reduce(function (rv, item) {
+                (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
+                return rv
+            }, {})
+            set({arrFin: arrFin, history: historyTemp, error: null})
 
 
         }
         catch (error) {
             set({ error: error.message })
-            
+
         }
         finally {
             set({ loading: false })
+
         }
     }
-}))
+
+
+}
+
+
+
+))

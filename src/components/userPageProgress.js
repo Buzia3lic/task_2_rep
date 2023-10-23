@@ -10,25 +10,26 @@ const UserPageProgress = () => {
 
     useEffect(() => { fetchDates() }, [])
 
-    const { loading, error, history, fetchDates } = storeDate((state) => ({
+    const { loading, error, history, fetchDates, arrFin} = storeDate((state) => ({
         loading: state.loading,
         error: state.error,
         history: state.history,
-        fetchDates: state.fetchDates
+        fetchDates: state.fetchDates,
+        arrFin: state.arrFin
     }));
 
-    const arr = [];
-    history.history?.map((history) => {
-        arr.push(new Date(history.date));
-    });
+    // const arr = [];
+    // history.history?.map((history) => {
+    //     arr.push(new Date(history.date));
+    // });
 
-    const arr3 = arr.reduce(function (rv, item) {
-        (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
-        return rv
-    }, {});
+    // const arr3 = arr.reduce(function (rv, item) {
+    //     (rv[item.getFullYear()] = rv[item.getFullYear()] || []).push(item.toLocaleDateString());
+    //     return rv
+    // }, {});
 
-    for (var key in arr3) {
-        var progressValue = new Date().getFullYear() == key ? arr3[key].length : 0
+    for (var key in arrFin) {
+        var progressValue = new Date().getFullYear() == key ? arrFin[key].length : 0
     }
     switch (8 - progressValue) {
         case 0:
