@@ -52,7 +52,7 @@ const MainMenu = () => {
                 
             />
         <Outlet />
-        {/* <Divider /> */}
+        <Divider />
         <Segment padded='very' inverted color="teal"><Image src='https://www.webmoney.ru/assets/images/wm-logo-white.svg?v2' size='medium' centered /></Segment>
         
     </>
