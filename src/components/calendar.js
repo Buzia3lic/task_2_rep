@@ -31,7 +31,8 @@ export default function CalendarButtons() {
   };
   var buttonDisable = progressValue < 8 ? false : true;
 
-  function handleClick() {
+  async function handleClick() {
+
 
     const postDate = []
 
@@ -42,9 +43,12 @@ export default function CalendarButtons() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ postDate })
     };
-    fetch('http://localhost:3001/history', requestOptions)
-    alert('Данные отправлены!')
+  
+    const res = await fetch('http://localhost:3001/history', requestOptions)
+    const respons = await res.json()
+    console.info('Данные отправлены!')
     console.log(postDate)
+    console.log('Message: ' + respons.message + ', Code: ' + respons.code)
 
 
     // const postDate = {}

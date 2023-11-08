@@ -9,8 +9,8 @@ import StartPage from './pages/startPage';
 function App() {
   return (
     <Container style={{ margin: 20 }}>
-        {/* <MainTabs /> */}
-        <StartPage />
+        <MainTabs />
+        {/* <StartPage /> */}
     </Container>
   );
 
